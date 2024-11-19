@@ -2,9 +2,10 @@ from flask import Flask, jsonify, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 from werkzeug.security import generate_password_hash
+from config import Config
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:lunarspace@localhost/eleganza_ecommerce'
+app.config['SQLALCHEMY_DATABASE_URI'] = Config.SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
