@@ -1,18 +1,20 @@
 # ELEGANZA - Plataforma E-commerce de Moda
 
-![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
-
 ## 📋 Descripción
 
-ELEGANZA es una plataforma e-commerce especializada en moda que busca satisfacer las necesidades de los clientes en cuanto a la compra de ropa y accesorios. El sistema está diseñado para ofrecer una experiencia de usuario fluida y personalizada, conectando a compradores con las últimas tendencias de moda.
+ELEGANZA es una plataforma e-commerce especializada en moda que busca satisfacer las necesidades de los clientes en cuanto a la compra de ropa y accesorios. El sistema está diseñado para ofrecer una experiencia de usuario fluida , conectando a compradores con las últimas tendencias de moda.
+
+## 🖼️ Mockup de la pagina web ELEGANZA.
+
+![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
 
 ### 🎯 Características Principales
 
-- **Catálogo Dinámico**: Exploración intuitiva de productos con filtros y categorización
-- **Sistema de Recomendaciones**: Sugerencias basadas en temporadas y categorias
+- **Catálogo Dinámico**: Exploración intuitiva de productos con filtros y categorización _(pending)_
+- **Sistema de Recomendaciones**: Sugerencias basadas en temporadas y categorias _(pending)_
 - **Carrito de Compras**: Gestión eficiente del proceso de compra con múltiples opciones de pago _(pending)_
-- **Panel de Administración**: Control total sobre productos, inventario, pedidos y usuarios
-- **Gestión de Usuarios**: Perfiles personalizados con historial de compras y preferencias
+- **Panel de Administración**: Control total sobre productos, inventario, pedidos y usuarios _(pending)_
+- **Gestión de Usuarios**: Perfiles personalizados con historial de compras y preferencias _(pending)_
 - **Sistema de Valoraciones**: Reseñas y calificaciones de productos verificadas _(pending)_
 
 ### 🛠️ Tecnologías Utilizadas
@@ -48,17 +50,17 @@ python run.py # Ejecuta la aplicación Flask
 #### 2. `ini_flask.sh`
 Este script inicia el servidor Flask:   
 ```bash
-source venv/Scripts/activate
-net start MySQL80
-python run.py
+source venv/Scripts/activate # Activa el entorno virtual
+net start MySQL80 # Inicia el servidor MySQL
+python run.py # Ejecuta la aplicación Flask
 ```
 
 #### 3. `stop_flask.sh`
 Este script detiene el servidor Flask:
 
 ```bash
-net stop MySQL80
-deactivate
+net stop MySQL80 # Detiene el servidor MySQL
+deactivate # Desactiva el entorno virtual
 ```
 
 #### Notas: 
