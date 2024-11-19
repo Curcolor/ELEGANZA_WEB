@@ -41,7 +41,4 @@ deactivate
 > [!WARNING]
 > - Este repositorio está configurado para ejecutarse en un entorno Windows. Si estás utilizando un entorno Linux, es posible que necesites ajustar los comandos de activación del entorno virtual y la gestión del servidor MySQL. 
   
-__Autor__: 
-```diff 
-! @Curcolor 
-```
+__Autor__: ```diff @@ Curcolor @@```
