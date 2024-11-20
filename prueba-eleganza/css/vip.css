@@ -1,0 +1,618 @@
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    .alogo{
+        text-decoration: none;
+        color: var(--primary-color);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-icons a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+.vip-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/banners/vip-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+.vip-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.vip-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+/* Beneficios VIP */
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.beneficio-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-10px);
+}
+
+.beneficio-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+/* Niveles de Membresía */
+.niveles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.nivel-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.nivel-card.destacado {
+    transform: scale(1.05);
+}
+
+.nivel-card:hover {
+    transform: translateY(-10px);
+}
+
+.nivel-header {
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.nivel-header.plata { background: #A9A9A9; }
+.nivel-header.oro { background: #FFD700; }
+.nivel-header.platino { background: #E5E4E2; }
+
+.etiqueta-popular {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #ff4444;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.precio {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.nivel-beneficios {
+    padding: 2rem;
+}
+
+.nivel-beneficios ul {
+    list-style: none;
+}
+
+.nivel-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nivel-beneficios i {
+    color: var(--primary-color);
+}
+
+.btn-unirse {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-unirse:hover {
+    background: var(--secondary-color);
+}
+
+/* Testimonios VIP */
+.testimonios-vip {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.testimonio-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin: 2rem 0;
+}
+
+.cliente-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.cliente-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* FAQ */
+.faq-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .niveles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nivel-card.destacado {
+        transform: none;
+    }
+
+    .vip-header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Estilos base y header */
+
+.vip-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/banners/vip-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 6rem 1rem;
+}
+
+.vip-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.vip-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.vip-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+/* Beneficios VIP */
+.beneficios-section {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.beneficios-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.beneficio-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-10px);
+}
+
+.beneficio-card i {
+    font-size: 2.5rem;
+    color: #C5A880;
+    margin-bottom: 1.5rem;
+}
+
+.beneficio-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.beneficio-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Niveles de Membresía */
+.niveles-section {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.niveles-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.niveles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.nivel-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;           /* Añadido */
+    flex-direction: column;  /* Añadido */
+}
+
+.nivel-card.destacado {
+    transform: scale(1.05);
+}
+
+.nivel-card:hover {
+    transform: translateY(-10px);
+}
+
+.nivel-header {
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.nivel-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.nivel-header.plata { background: linear-gradient(135deg, #A9A9A9, #808080); }
+.nivel-header.oro { background: linear-gradient(135deg, #FFD700, #DAA520); }
+.nivel-header.platino { background: linear-gradient(135deg, #E5E4E2, #A9A9A9); }
+
+.etiqueta-popular {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #C5A880;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.precio {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.precio span {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.nivel-beneficios {
+    padding: 2rem;
+    flex-grow: 1;           /* Añadido */
+    display: flex;          /* Añadido */
+    flex-direction: column;
+}
+
+.nivel-beneficios ul {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+}
+
+.nivel-beneficios li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+.nivel-beneficios i {
+    color: #C5A880;
+}
+
+.btn-unirse {
+    width: 100%;
+    padding: 1rem;
+    background: #C5A880;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: auto;
+    border-radius: 5px;
+    
+}
+
+.btn-unirse:hover {
+    background: #B39671;
+}
+
+/* Testimonios VIP */
+.testimonios-section {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.testimonios-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.testimonio-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.testimonio-texto {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.cliente-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cliente-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.cliente-detalles h4 {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.cliente-detalles p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* FAQ Section */
+.faq-section {
+    margin: 4rem 0;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.faq-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.faq-item h3 {
+    margin-bottom: 1rem;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.faq-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .niveles-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nivel-card.destacado {
+        transform: none;
+    }
+
+    .vip-header h1 {
+        font-size: 2rem;
+    }
+
+    .beneficios-grid,
+    .testimonios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vip-container {
+        padding: 2rem 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .vip-header {
+        padding: 4rem 1rem;
+    }
+
+    .precio {
+        font-size: 1.5rem;
+    }
+
+    .cliente-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Footer */
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding: 4rem 5%;
+    background: #1a1a1a;
+    color: white;
+}
+
+.footer-section h3 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1.5rem;
+    background: #111;
+    color: white;
+}
+

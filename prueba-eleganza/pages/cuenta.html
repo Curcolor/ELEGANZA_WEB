@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta - Eleganza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/cuenta.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a class="alogo" href="../index.html">ELEGANZA</a>
+        </div>
+        <div class="nav-links">
+            <a href="../pages/catalogo.html">Catálogo</a>
+            <a href="../pages/sobre-nosotros.html">Nosotros</a>
+            <a href="../pages/servicios.html">Servicios</a>
+            <a href="../pages/vip.html">VIP</a>
+        </div>
+        <div class="nav-icons">
+            <a href="../pages/cuenta.html"><i class="fas fa-user"></i></a>
+            <a href="../pages/carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+    
+    <main class="cuenta-container">
+        <div class="cuenta-grid">
+            <!-- Menú lateral -->
+            <aside class="cuenta-menu">
+                <div class="perfil-info">
+                    <div class="perfil-imagen">
+                        <img src="../assets/img/profile-default.jpg" alt="Foto de perfil">
+                    </div>
+                    <h3>Ana García</h3>
+                    <p>Cliente VIP</p>
+                </div>
+                
+                <nav class="menu-navegacion">
+                    <a href="#" class="menu-item activo">
+                        <i class="fas fa-user"></i>
+                        Mi Perfil
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-shopping-bag"></i>
+                        Mis Pedidos
+                    </a>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Direcciones
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-credit-card"></i>
+                        Métodos de Pago
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fas fa-cog"></i>
+                        Configuración
+                    </a>
+                    <a href="#" class="menu-item cerrar-sesion">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Cerrar Sesión
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Contenido principal -->
+            <section class="cuenta-contenido">
+                <h1>Mi Perfil</h1>
+                
+                <div class="perfil-grid">
+                    <!-- Información Personal -->
+                    <div class="perfil-seccion">
+                        <h2>Información Personal</h2>
+                        <form class="form-perfil">
+                            <div class="form-grid">
+                                <div class="form-grupo">
+                                    <label>Nombre</label>
+                                    <input type="text" value="Ana" required>
+                                </div>
+                                <div class="form-grupo">
+                                    <label>Apellidos</label>
+                                    <input type="text" value="García" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grupo">
+                                <label>Correo Electrónico</label>
+                                <input type="email" value="ana.garcia@email.com" required>
+                            </div>
+                            
+                            <div class="form-grupo">
+                                <label>Teléfono</label>
+                                <input type="tel" value="+52 123 456 7890">
+                            </div>
+                            
+                            <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                        </form>
+                    </div>
+
+                    <!-- Cambiar Contraseña -->
+                    <div class="perfil-seccion">
+                        <h2>Cambiar Contraseña</h2>
+                        <form class="form-password">
+                            <div class="form-grupo">
+                                <label>Contraseña Actual</label>
+                                <input type="password" required>
+                            </div>
+                            
+                            <div class="form-grupo">
+                                <label>Nueva Contraseña</label>
+                                <input type="password" required>
+                            </div>
+                            
+                            <div class="form-grupo">
+                                <label>Confirmar Nueva Contraseña</label>
+                                <input type="password" required>
+                            </div>
+                            
+                            <button type="submit" class="btn-guardar">Actualizar Contraseña</button>
+                        </form>
+                    </div>
+
+                    <!-- Preferencias -->
+                    <div class="perfil-seccion">
+                        <h2>Preferencias</h2>
+                        <div class="preferencias-lista">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                                <span class="switch-label">Recibir notificaciones por email</span>
+                            </label>
+                            
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                                <span class="switch-label">Ofertas y promociones</span>
+                            </label>
+                            
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                                <span class="switch-label">Boletín mensual</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Mis Pedidos -->
+            <section class="cuenta-contenido" id="seccion-pedidos">
+                <h1>Mis Pedidos</h1>
+                <div class="pedidos-grid">
+                    <div class="pedido-item">
+                        <div class="pedido-header">
+                            <h3>Pedido #1234</h3>
+                            <span class="estado-pedido entregado">Entregado</span>
+                        </div>
+                        <div class="pedido-detalles">
+                            <p>Fecha: 15/03/2024</p>
+                            <p>Total: $2,500 MXN</p>
+                            <button class="btn-detalles">Ver Detalles</button>
+                        </div>
+                    </div>
+                    <div class="pedido-item">
+                        <div class="pedido-header">
+                            <h3>Pedido #1235</h3>
+                            <span class="estado-pedido en-proceso">En Proceso</span>
+                        </div>
+                        <div class="pedido-detalles">
+                            <p>Fecha: 20/03/2024</p>
+                            <p>Total: $1,800 MXN</p>
+                            <button class="btn-detalles">Ver Detalles</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Direcciones -->
+            <section class="cuenta-contenido" id="seccion-direcciones">
+                <h1>Mis Direcciones</h1>
+                <div class="direcciones-grid">
+                    <div class="direccion-item">
+                        <h3>Casa Principal</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Calle Reforma 123</p>
+                        <p>Col. Centro, Ciudad de México</p>
+                        <p>CP 06000</p>
+                        <div class="direccion-acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="direccion-item agregar-nueva">
+                        <i class="fas fa-plus-circle"></i>
+                        <h3>Agregar Nueva Dirección</h3>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Métodos de Pago -->
+            <section class="cuenta-contenido" id="seccion-pagos">
+                <h1>Métodos de Pago</h1>
+                <div class="metodos-pago-container">
+                    <!-- Tarjetas de métodos existentes -->
+                    <div class="metodo-pago-item">
+                        <div class="tarjeta-tipo">
+                            <i class="fab fa-cc-visa"></i>
+                        </div>
+                        <div class="tarjeta-info">
+                            <p>•••• •••• •••• 1234</p>
+                            <p>Vence: 12/25</p>
+                        </div>
+                        <div class="tarjeta-acciones">
+                            <button class="btn-editar">Editar</button>
+                            <button class="btn-eliminar">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contenedor separado para agregar nuevo -->
+                <div class="agregar-nuevo-container">
+                    <div class="metodo-pago-item agregar-nuevo">
+                        <i class="fas fa-plus"></i>
+                        <span>Agregar nuevo método de pago</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección Configuración -->
+            <section class="cuenta-contenido" id="seccion-config">
+                <h1>Configuración</h1>
+                <div class="config-grid">
+                    <div class="config-seccion">
+                        <h2>Notificaciones</h2>
+                        <div class="preferencias-lista">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                                <span class="switch-label">Notificaciones por email</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                                <span class="switch-label">Notificaciones de pedidos</span>
+                            </label>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                                <span class="switch-label">Boletín mensual</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="config-seccion">
+                        <h2>Privacidad</h2>
+                        <div class="preferencias-lista">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                                <span class="switch-label">Perfil público</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="config-seccion">
+                        <h2>Eliminar Cuenta</h2>
+                        <p class="texto-advertencia">Esta acción no se puede deshacer</p>
+                        <button class="btn-eliminar-cuenta">Eliminar mi cuenta</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Eleganza</h3>
+                <p>Elegancia en cada detalle</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

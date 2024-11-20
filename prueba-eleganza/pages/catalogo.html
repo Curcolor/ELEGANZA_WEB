@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Eleganza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/catalogo.css">
+</head>
+<body>
+     <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a class="alogo" href="../index.html">ELEGANZA</a>
+        </div>
+        <div class="nav-links">
+            <a href="../pages/catalogo.html">Catálogo</a>
+            <a href="../pages/sobre-nosotros.html">Nosotros</a>
+            <a href="../pages/servicios.html">Servicios</a>
+            <a href="../pages/vip.html">VIP</a>
+        </div>
+        <div class="nav-icons">
+            <a href="../pages/cuenta.html"><i class="fas fa-user"></i></a>
+            <a href="../pages/carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+    
+    
+    <main class="catalogo-container">
+        <aside class="filtros">
+            <h3>Filtros</h3>
+            <div class="filtro-grupo">
+                <h4>Precio</h4>
+                <div class="rango-precio">
+                    <input type="range" min="0" max="5000" value="2500">
+                    <div class="rango-valores">
+                        <span>$0</span>
+                        <span>$5,000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filtro-grupo">
+                <h4>Categorías</h4>
+                <label class="checkbox">
+                    <input type="checkbox"> Vestidos
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Blusas
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Pantalones
+                </label>
+                <label class="checkbox">
+                    <input type="checkbox"> Accesorios
+                </label>
+            </div>
+            
+            <div class="filtro-grupo">
+                <h4>Tallas</h4>
+                <div class="tallas-grid">
+                    <button>XS</button>
+                    <button>S</button>
+                    <button>M</button>
+                    <button>L</button>
+                    <button>XL</button>
+                </div>
+            </div>
+            
+            <div class="filtro-grupo">
+                <h4>Colores</h4>
+                <div class="colores-grid">
+                    <span class="color-circle" style="background: #000;"></span>
+                    <span class="color-circle" style="background: #fff; border: 1px solid #ddd;"></span>
+                    <span class="color-circle" style="background: #C4A484;"></span>
+                </div>
+            </div>
+        </aside>
+
+        <section class="productos-grid">
+            <!-- Productos -->
+            <div class="producto-card">
+                <img src="../assets/img/products/product-1.jpg" alt="Producto">
+                <h3>Vestido Elegante</h3>
+                <p class="precio">$1,234.00 MXN</p>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+            <!-- Más productos... -->
+        </section>
+    </main>
+
+    <!-- Footer (igual que en index.html) -->
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Eleganza</h3>
+                <p>Elegancia en cada detalle</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

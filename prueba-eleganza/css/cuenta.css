@@ -1,0 +1,512 @@
+.cuenta-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 5%;
+}
+
+.cuenta-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+/* Menú lateral */
+.cuenta-menu {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.perfil-info {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.perfil-imagen {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1rem;
+}
+
+.perfil-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.menu-navegacion {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover,
+.menu-item.activo {
+    background: var(--primary-color);
+    color: white;
+}
+
+.menu-item.cerrar-sesion {
+    margin-top: 2rem;
+    color: #ff4444;
+}
+
+.menu-item.cerrar-sesion:hover {
+    background: #ff4444;
+    color: white;
+}
+
+/* Contenido principal */
+.cuenta-contenido {
+    padding: 2rem;
+    margin-bottom: 3rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.cuenta-contenido h1 {
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
+}
+
+.perfil-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.perfil-seccion {
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.perfil-seccion h2 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.form-grupo input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-guardar {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-guardar:hover {
+    background: var(--secondary-color);
+}
+
+/* Switches */
+.preferencias-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background: #ddd;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cuenta-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .menu-navegacion {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .menu-item {
+        flex: 1 1 calc(50% - 1rem);
+        justify-content: center;
+    }
+}
+
+/* Estilos para la sección de pedidos */
+.pedidos-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.pedido-item {
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.pedido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.pedido-detalles {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.estado-pedido {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.estado-pedido.entregado {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.estado-pedido.en-proceso {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.btn-detalles {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-detalles:hover {
+    background: var(--secondary-color);
+}
+
+/* Estilos para la sección de direcciones */
+.direcciones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.direccion-item {
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.direccion-item h3 {
+    margin-bottom: 1rem;
+    color: var(--secondary-color);
+}
+
+.direccion-item p {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.direccion-item.agregar-nueva {
+    border: 2px dashed #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 200px;
+}
+
+.direccion-item.agregar-nueva:hover {
+    border-color: var(--primary-color);
+    background: #f8f9fa;
+}
+
+.direccion-acciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Estilos específicos para métodos de pago */
+.metodos-pago-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.metodo-pago-item {
+    position: relative;
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tarjeta-tipo {
+    flex-shrink: 0;
+    width: 60px;
+    text-align: center;
+}
+
+.tarjeta-tipo i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.tarjeta-info {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.tarjeta-info p {
+    margin: 0.2rem 0;
+    color: var(--text-color);
+}
+
+.tarjeta-acciones {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: flex-start;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+/* Estilo específico para el contenedor de agregar nuevo */
+.agregar-nuevo-container {
+    position: relative;
+    z-index: 11;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+/* Estilo para la tarjeta de agregar nuevo */
+.metodo-pago-item.agregar-nuevo {
+    border: 2px dashed #ddd;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-height: 100px;
+}
+
+.metodo-pago-item.agregar-nuevo i {
+    font-size: 2rem;
+    color: #999;
+    margin-right: 1rem;
+}
+
+.metodo-pago-item.agregar-nuevo:hover {
+    border-color: var(--primary-color);
+    background: #f8f9fa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .metodo-pago-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    .tarjeta-acciones {
+        justify-content: center;
+    }
+}
+
+/* Botones comunes para las tres secciones */
+.btn-editar,
+.btn-eliminar {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    
+}
+
+.btn-editar {
+    background: #f0f0f0;
+    color: var(--text-color);
+}
+
+.btn-editar:hover {
+    background: #e0e0e0;
+}
+
+.btn-eliminar {
+    background: #fff0f0;
+    color: #ff4444;
+}
+
+.btn-eliminar:hover {
+    background: #ff4444;
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .direcciones-grid,
+    .metodos-pago-container {
+        grid-template-columns: 1fr;
+    }
+
+    .metodo-pago-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .tarjeta-acciones {
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pedido-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .direccion-acciones,
+    .tarjeta-acciones {
+        flex-direction: column;
+    }
+
+    .btn-editar,
+    .btn-eliminar {
+        width: 100%;
+    }
+}
+
+/* Estilos para la sección de configuración */
+.config-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.config-seccion {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 2rem;
+}
+
+.btn-eliminar-cuenta {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.texto-advertencia {
+    color: #f44336;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Asegurarse que la sección de configuración no tape */
+#seccion-config {
+    position: relative;
+    z-index: 1;
+}

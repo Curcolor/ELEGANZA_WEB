@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Eleganza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/principal.css">
+    <link rel="stylesheet" href="../css/checkout.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a class="alogo" href="../index.html">ELEGANZA</a>
+        </div>
+        <div class="nav-links">
+            <a href="../pages/catalogo.html">Catálogo</a>
+            <a href="../pages/sobre-nosotros.html">Nosotros</a>
+            <a href="../pages/servicios.html">Servicios</a>
+            <a href="../pages/vip.html">VIP</a>
+        </div>
+        <div class="nav-icons">
+            <a href="../pages/cuenta.html"><i class="fas fa-user"></i></a>
+            <a href="../pages/carrito.html"><i class="fas fa-shopping-cart"></i></a>
+        </div>
+    </nav>
+    
+    <main class="checkout-container">
+        <div class="checkout-pasos">
+            <div class="paso activo" id="paso-direccion">1. Dirección</div>
+            <div class="paso" id="paso-envio">2. Envío</div>
+            <div class="paso" id="paso-pago">3. Pago</div>
+        </div>
+
+        <div class="checkout-grid">
+            <!-- Formulario de Dirección -->
+            <div class="checkout-form" id="form-direccion">
+                <h2>Información de Envío</h2>
+                <form id="direccion-form">
+                    <div class="form-grid-2">
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" 
+                               pattern="[0-9]{10}" 
+                               placeholder="10 dígitos" required>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="calle">Calle y Número</label>
+                        <input type="text" id="calle" name="calle" required>
+                    </div>
+            
+                    <div class="form-grid-2">
+                        <div class="form-grupo">
+                            <label for="colonia">Colonia</label>
+                            <input type="text" id="colonia" name="colonia" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="cp">Código Postal</label>
+                            <input type="text" id="cp" name="cp" 
+                                   pattern="[0-9]{5}" 
+                                   placeholder="5 dígitos" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-grid-3">
+                        <div class="form-grupo">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="AGS">Aguascalientes</option>
+                                <option value="BCN">Baja California</option>
+                                <!-- Añadir más estados... -->
+                            </select>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="pais">País</label>
+                            <input type="text" id="pais" name="pais" value="México" readonly>
+                        </div>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="referencias">Referencias (opcional)</label>
+                        <textarea id="referencias" name="referencias" 
+                                  placeholder="Indicaciones adicionales para la entrega"></textarea>
+                    </div>
+            
+                    <button type="submit" class="btn-continuar">Continuar al Envío</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Envío -->
+            <div class="checkout-form hidden" id="form-envio">
+                <h2>Método de Envío</h2>
+                <form id="envio-form">
+                    <div class="form-grupo">
+                        <div class="opcion-envio">
+                            <input type="radio" name="envio" id="envio-estandar" checked>
+                            <label for="envio-estandar">
+                                <div class="envio-info">
+                                    <h3>Envío Estándar</h3>
+                                    <p>5-7 días hábiles</p>
+                                    <span class="envio-precio">$150.00 MXN</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="opcion-envio">
+                            <input type="radio" name="envio" id="envio-express">
+                            <label for="envio-express">
+                                <div class="envio-info">
+                                    <h3>Envío Express</h3>
+                                    <p>2-3 días hábiles</p>
+                                    <span class="envio-precio">$250.00 MXN</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-continuar">Continuar</button>
+                    <button type="button" class="btn-regresar" onclick="mostrarDireccion()">Regresar</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Pago -->
+            <div class="checkout-form hidden" id="form-pago">
+                <h2>Información de Pago</h2>
+                <form id="pago-form">
+                    <div class="form-grupo">
+                        <label>Número de Tarjeta</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-grupo">
+                            <label>Fecha de Expiración</label>
+                            <input type="text" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label>Nombre en la Tarjeta</label>
+                        <input type="text" required>
+                    </div>
+
+                    <button type="submit" class="btn-continuar">Finalizar Compra</button>
+                    <button type="button" class="btn-regresar" onclick="mostrarEnvio()">Regresar</button>
+                </form>
+            </div>
+
+            <!-- Resumen del pedido (permanece igual) -->
+            <div class="checkout-resumen">
+                <!-- ... tu código de resumen existente ... -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Eleganza</h3>
+                <p>Elegancia en cada detalle</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
+                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const pasos = ['direccion', 'envio', 'pago'];
+        let pasoActual = 'direccion';
+
+        function actualizarPasos() {
+            pasos.forEach(paso => {
+                const elemento = document.getElementById(`paso-${paso}`);
+                const formulario = document.getElementById(`form-${paso}`);
+                
+                if (paso === pasoActual) {
+                    elemento.classList.add('activo');
+                    formulario.classList.remove('hidden');
+                } else {
+                    elemento.classList.remove('activo');
+                    formulario.classList.add('hidden');
+                }
+            });
+        }
+
+        function mostrarDireccion() {
+            pasoActual = 'direccion';
+            actualizarPasos();
+        }
+
+        function mostrarEnvio() {
+            pasoActual = 'envio';
+            actualizarPasos();
+        }
+
+        function mostrarPago() {
+            pasoActual = 'pago';
+            actualizarPasos();
+        }
+
+        // Event Listeners para los formularios
+        document.getElementById('direccion-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            mostrarEnvio();
+        });
+
+        document.getElementById('envio-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            mostrarPago();
+        });
+
+        document.getElementById('pago-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Aquí iría la lógica de procesamiento del pago
+            alert('¡Compra finalizada con éxito!');
+            window.location.href = '/confirmacion.html';
+        });
+    </script>
+</body>
+</html>
