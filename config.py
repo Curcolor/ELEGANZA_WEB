@@ -5,7 +5,13 @@ load_dotenv()
 
 class Config:
     SECRET_KEY = os.getenv('SECRET_KEY', 'tu_clave_secreta')
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL', 'mysql://root:lunarspace@localhost/eleganza_ecommerce')
-    if SQLALCHEMY_DATABASE_URI and SQLALCHEMY_DATABASE_URI.startswith('postgres://'):
-        SQLALCHEMY_DATABASE_URI = SQLALCHEMY_DATABASE_URI.replace('postgres://', 'postgresql://', 1)
+    
+    # Construir DATABASE_URL para MySQL
+    DB_USER = os.getenv('MYSQLUSER', 'root')
+    DB_PASSWORD = os.getenv('MYSQLPASSWORD', 'lunarspace')
+    DB_HOST = os.getenv('MYSQLHOST', 'localhost')
+    DB_NAME = os.getenv('MYSQLDATABASE', 'eleganza_ecommerce')
+    DB_PORT = os.getenv('MYSQLPORT', '3306')
+    
+    SQLALCHEMY_DATABASE_URI = f"mysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
