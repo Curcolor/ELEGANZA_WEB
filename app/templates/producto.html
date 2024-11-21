@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Detalle de Producto
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/producto.css') }}">
+{% endblock %}
+
+{% block content %}
+    <main class="producto-detalle">
+        <div class="producto-imagenes">
+            <div class="imagen-principal">
+                <img src="../assets/img/products/product-1.jpg" alt="Producto">
+            </div>
+            <div class="imagenes-miniaturas">
+                <img src="../assets/img/products/product-1.jpg" alt="Miniatura 1">
+                <img src="../assets/img/products/product-2.jpg" alt="Miniatura 2">
+                <img src="../assets/img/products/product-3.jpg" alt="Miniatura 3">
+            </div>
+        </div>
+
+        <div class="producto-info">
+            <h1>Vestido Elegante</h1>
+            <div class="producto-precio">
+                <span class="precio-actual">$1,234.00 MXN</span>
+                <span class="precio-anterior">$1,500.00 MXN</span>
+            </div>
+            
+            <div class="producto-opciones">
+                <div class="selector-talla">
+                    <h3>Talla</h3>
+                    <div class="tallas-grid">
+                        <button>XS</button>
+                        <button>S</button>
+                        <button>M</button>
+                        <button>L</button>
+                        <button>XL</button>
+                    </div>
+                </div>
+                
+                <div class="selector-color">
+                    <h3>Color</h3>
+                    <div class="colores-grid">
+                        <span class="color-circle" style="background: #000;"></span>
+                        <span class="color-circle" style="background: #C4A484;"></span>
+                        <span class="color-circle" style="background: #fff; border: 1px solid #ddd;"></span>
+                    </div>
+                </div>
+                
+                <div class="selector-cantidad">
+                    <h3>Cantidad</h3>
+                    <div class="cantidad-controles">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="btn-agregar-carrito">Agregar al Carrito</button>
+            
+            <div class="descripcion">
+                <h3>Descripción</h3>
+                <p>Vestido elegante perfecto para ocasiones especiales. Confeccionado con telas de alta calidad y diseñado para brindar máxima comodidad y estilo.</p>
+            </div>
+
+            <div class="detalles-envio">
+                <div class="detalle">
+                    <i class="fas fa-truck"></i>
+                    <span>Envío gratis en compras mayores a $999</span>
+                </div>
+                <div class="detalle">
+                    <i class="fas fa-undo"></i>
+                    <span>Devolución gratuita por 30 días</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+{% endblock %}
+
+{% block content %}
+    <main class="checkout-container">
+        <div class="checkout-pasos">
+            <div class="paso activo" id="paso-direccion">1. Dirección</div>
+            <div class="paso" id="paso-envio">2. Envío</div>
+            <div class="paso" id="paso-pago">3. Pago</div>
+        </div>
+
+        <div class="checkout-grid">
+            <!-- Formulario de Dirección -->
+            <div class="checkout-form" id="form-direccion">
+                <h2>Información de Envío</h2>
+                <form id="direccion-form">
+                    <div class="form-grid-2">
+                        <div class="form-grupo">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" 
+                               pattern="[0-9]{10}" 
+                               placeholder="10 dígitos" required>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="calle">Calle y Número</label>
+                        <input type="text" id="calle" name="calle" required>
+                    </div>
+            
+                    <div class="form-grid-2">
+                        <div class="form-grupo">
+                            <label for="colonia">Colonia</label>
+                            <input type="text" id="colonia" name="colonia" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="cp">Código Postal</label>
+                            <input type="text" id="cp" name="cp" 
+                                   pattern="[0-9]{5}" 
+                                   placeholder="5 dígitos" required>
+                        </div>
+                    </div>
+            
+                    <div class="form-grid-3">
+                        <div class="form-grupo">
+                            <label for="ciudad">Ciudad</label>
+                            <input type="text" id="ciudad" name="ciudad" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="CDMX">Ciudad de México</option>
+                                <option value="AGS">Aguascalientes</option>
+                                <option value="BCN">Baja California</option>
+                                <!-- Añadir más estados... -->
+                            </select>
+                        </div>
+                        <div class="form-grupo">
+                            <label for="pais">País</label>
+                            <input type="text" id="pais" name="pais" value="México" readonly>
+                        </div>
+                    </div>
+            
+                    <div class="form-grupo">
+                        <label for="referencias">Referencias (opcional)</label>
+                        <textarea id="referencias" name="referencias" 
+                                  placeholder="Indicaciones adicionales para la entrega"></textarea>
+                    </div>
+            
+                    <button type="submit" class="btn-continuar">Continuar al Envío</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Envío -->
+            <div class="checkout-form hidden" id="form-envio">
+                <h2>Método de Envío</h2>
+                <form id="envio-form">
+                    <div class="form-grupo">
+                        <div class="opcion-envio">
+                            <input type="radio" name="envio" id="envio-estandar" checked>
+                            <label for="envio-estandar">
+                                <div class="envio-info">
+                                    <h3>Envío Estándar</h3>
+                                    <p>5-7 días hábiles</p>
+                                    <span class="envio-precio">$150.000 COP</span>
+                                </div>
+                            </label>
+                        </div>
+
+                        <div class="opcion-envio">
+                            <input type="radio" name="envio" id="envio-express">
+                            <label for="envio-express">
+                                <div class="envio-info">
+                                    <h3>Envío Express</h3>
+                                    <p>2-3 días hábiles</p>
+                                    <span class="envio-precio">$250.000 COP</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn-continuar">Continuar</button>
+                    <button type="button" class="btn-regresar" onclick="mostrarDireccion()">Regresar</button>
+                </form>
+            </div>
+
+            <!-- Formulario de Pago -->
+            <div class="checkout-form hidden" id="form-pago">
+                <h2>Información de Pago</h2>
+                <form id="pago-form">
+                    <div class="form-grupo">
+                        <label>Número de Tarjeta</label>
+                        <input type="text" placeholder="1234 5678 9012 3456" required>
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-grupo">
+                            <label>Fecha de Expiración</label>
+                            <input type="text" placeholder="MM/AA" required>
+                        </div>
+                        <div class="form-grupo">
+                            <label>CVV</label>
+                            <input type="text" placeholder="123" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label>Nombre en la Tarjeta</label>
+                        <input type="text" required>
+                    </div>
+
+                    <button type="submit" class="btn-continuar">Finalizar Compra</button>
+                    <button type="button" class="btn-regresar" onclick="mostrarEnvio()">Regresar</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+{% block js %}
+    <script>
+        const userId = 1;  // Asumiendo que usas Flask-Login
+        const total = 0;  // Este valor debe ser pasado desde el backend
+    </script>
+
+    <script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+{% endblock %}
+
+{% endblock %}

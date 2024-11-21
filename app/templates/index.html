@@ -1,95 +1,136 @@
-<!-- templates/index.html -->
 {% extends "base.html" %}
 
-{% block content %}
- <!-- Navbar -->
- <nav class="navbar">
-    <div class="logo">ELEGANZA</div>
-    <div class="nav-links">
-        <a href="/registro">Inicio</a>
-        <a href="#">Catálogo</a>
-        <a href="#">Nosotros</a>
-        <a href="#">Contacto</a>
-    </div>
-    <div class="nav-icons">
-        <i class="fas fa-search"></i>
-        <i class="fas fa-user"></i>
-        <i class="fas fa-shopping-cart"></i>
-    </div>
-</nav>
-
-<!-- Hero Section -->
-<header class="hero">
-    <h1>Elegancia en Cada Detalle</h1>
-    <p>Descubre la nueva colección de Eleganza. Moda del último estilo.</p>
-    <div class="hero-buttons">
-        <button class="btn primary">Ver Catálogo</button>
-        <button class="btn secondary">Contactar</button>
-    </div>
-</header>
-
-<!-- Nuevos Catálogos -->
-<section class="catalogs">
-    <h2>Nuevos Catálogos</h2>
-    <div class="catalog-filters">
-        <button class="active">Mujer</button>
-        <button>Hombre</button>
-    </div>
-    <div class="catalog-grid">
-        <div class="catalog-item">
-            <img src="{{ url_for('static', filename='imgs/vestido_negro.webp') }}" alt="Modelo Elegante">
-            <h3>Modelo Elegante</h3>
-            <p class="price">$1,234.00 MXN</p>
-            <button>Comprar</button>
-        </div>
-        <!-- Repetir catalog-item 3 veces más -->
-    </div>
-</section>
-
-<!-- Colección Destacada -->
-<section class="featured">
-    <h2>Colección Destacada</h2>
-    <p>Descubre nuestras piezas más exclusivas seleccionadas especialmente para ti</p>
-    <button class="btn primary">Ver Colección</button>
-    <div class="featured-grid">
-        <!-- 4 imágenes en grid -->
-    </div>
-</section>
-
-<!-- Testimonios -->
-<section class="testimonials">
-    <h2>Lo Que Dicen Nuestros Clientes</h2>
-    <div class="testimonials-grid">
-        <!-- 3 testimonios -->
-    </div>
-</section>
-
-<!-- Newsletter -->
-<section class="newsletter">
-    <h2>Únete a Nuestra Lista VIP</h2>
-    <p>Sé el primero en conocer nuestras nuevas colecciones y ofertas exclusivas</p>
-    <form>
-        <input type="email" placeholder="Tu correo electrónico">
-        <button type="submit">Suscribir</button>
-    </form>
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="footer-content">
-        <div class="footer-section">
-            <h3>Sobre Eleganza</h3>
-            <!-- Links -->
-        </div>
-        <div class="footer-section">
-            <h3>Ayuda</h3>
-            <!-- Links -->
-        </div>
-        <div class="footer-section">
-            <h3>Síguenos</h3>
-            <!-- Social media icons -->
-        </div>
-    </div>
-</footer>
+{% block title %}
+    Moda y Estilo
 {% endblock %}
 
+
+{% block content %}
+
+    <header class="hero">
+        <h1>Elegancia en Cada Detalle</h1>
+        <p>Descubre nuestra nueva colección</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('carrito') }}" class="btn primary">Comprar Ahora</a>
+            <a href="{{ url_for('catalogo') }}" class="btn secondary">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <section class="nuevos-catalogos">
+        <h2>Nuevos Catálogos</h2>
+        <div class="catalogo-grid">
+            <div class="catalogo-item">
+                <img src="{{ url_for('static', filename='imgs/catalogo-1.webp') }}" alt="Catálogo Primavera">
+                <h3>Primavera 2024</h3>
+                <p>Nueva Colección</p>
+            </div>
+            <div class="catalogo-item">
+                <img src="{{ url_for('static', filename='imgs/catalogo-2.webp') }}" alt="Catálogo Verano">
+                <h3>Verano 2024</h3>
+                <p>Próximamente</p>
+            </div>
+            <div class="catalogo-item">
+                <img src="{{ url_for('static', filename='imgs/catalogo-3.webp') }}" alt="Catálogo Especial">
+                <h3>Edición Especial</h3>
+                <p>Limitado</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="coleccion-destacada">
+        <h2>Colección Destacada</h2>
+        <div class="destacados-grid">
+            <div class="destacado-item grande">
+                <img src="{{ url_for('static', filename='imgs/destacado-1.webp') }}" alt="Destacado 1">
+                <div class="destacado-info">
+                    <h3>Elegancia Casual</h3>
+                    <button class="btn primary">Ver Más</button>
+                </div>
+            </div>
+            <div class="destacado-item">
+                <img src="{{ url_for('static', filename='imgs/destacado-2.webp') }}" alt="Destacado 2">
+                <div class="destacado-info">
+                    <h3>Accesorios</h3>
+                    <button class="btn primary">Ver Más</button>
+                </div>
+            </div>
+            <div class="destacado-item">
+                <img src="{{ url_for('static', filename='imgs/destacado-3.webp') }}" alt="Destacado 3">
+                <div class="destacado-info">
+                    <h3>Calzado</h3>
+                    <button class="btn primary">Ver Más</button>
+                </div>
+            </div>
+            <div class="destacado-item">
+                <img src="{{ url_for('static', filename='imgs/destacado-4.webp') }}" alt="Destacado 4">
+                <div class="destacado-info">
+                    <h3>Complementos</h3>
+                    <button class="btn primary">Ver Más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <div class="testimonios-grid">
+            <div class="testimonio">
+                <div class="testimonio-contenido">
+                    <p>"La calidad de las prendas es excepcional. Me encanta el estilo único que ofrecen."</p>
+                    <div class="cliente-info">
+                        <h4>María Rodríguez</h4>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>  
+                </div>   
+            </div>
+
+            <div class="testimonio">
+                <div class="testimonio-contenido">
+                    <p>"El servicio al cliente es impecable y la entrega fue más rápida de lo esperado."</p>
+                    <div class="cliente-info">
+                        <h4>Carlos Mendoza</h4>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>  
+                </div>   
+            </div>
+
+            <div class="testimonio">
+                <div class="testimonio-contenido">
+                    <p>"Las colecciones siempre están a la última moda. ¡No puedo esperar a ver lo nuevo!"</p>
+                    <div class="cliente-info">
+                        <h4>Laura Sánchez</h4>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>  
+                </div>   
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>Únete a Nuestra Lista VIP</h2>
+        <p>Recibe ofertas exclusivas y las últimas novedades</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Tu correo electrónico">
+            <button type="submit" class="btn primary">Suscribirse</button>
+        </form>
+    </section>
+    
+{% endblock %}

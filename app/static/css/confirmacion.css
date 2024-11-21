@@ -1,0 +1,147 @@
+.contenedor {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contenedor h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.pedido-info {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid #e9ecef;
+    margin: 2rem 0;
+}
+
+.pedido-info h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.detalle-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detalle-item .label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 1.1rem;
+}
+
+.detalle-item .valor {
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    min-width: 120px;
+    text-align: center;
+}
+
+/* Estilo especial para el código de seguimiento */
+.detalle-item .valor[data-tipo="codigo"] {
+    background: var(--primary-color);
+    color: white;
+    letter-spacing: 1px;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+/* Estilo para el estado */
+.detalle-item .valor[data-tipo="estado"] {
+    background: #e9ecef;
+    color: #495057;
+    font-weight: 600;
+}
+
+/* Estilo para el total */
+.detalle-item .valor[data-tipo="total"] {
+    color: #2b8a3e;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Botón para volver a la tienda */
+.volver-tienda {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.volver-tienda:hover {
+    background: #b39476;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contenedor {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .contenedor h1 {
+        font-size: 2rem;
+    }
+
+    .pedido-info {
+        padding: 1.5rem;
+    }
+
+    .detalle-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .detalle-item .valor {
+        width: 100%;
+    }
+} 

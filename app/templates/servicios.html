@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Servicios
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/servicios.css') }}">
+{% endblock %}
+
+{% block content %}
+    <header class="servicios-header">
+        <h1>Nuestros Servicios</h1>
+        <p>Descubre todo lo que Eleganza tiene para ti</p>
+    </header>
+
+    <main class="servicios-container">
+        <!-- Servicios Grid -->
+        <div class="servicios-grid">
+            <div class="servicio-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Asesoría de Imagen</h3>
+                <p>Nuestros expertos te ayudarán a encontrar el estilo perfecto para ti.</p>
+                <a href="#" class="btn-servicio">Más Información</a>
+            </div>
+
+            <div class="servicio-card">
+                <i class="fas fa-ruler"></i>
+                <h3>Ajustes a Medida</h3>
+                <p>Adaptamos tus prendas para un ajuste perfecto.</p>
+                <a href="#" class="btn-servicio">Más Información</a>
+            </div>
+
+            <div class="servicio-card">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Personal Shopper</h3>
+                <p>Compra con la ayuda de nuestros expertos en moda.</p>
+                <a href="#" class="btn-servicio">Más Información</a>
+            </div>
+
+            <div class="servicio-card">
+                <i class="fas fa-gift"></i>
+                <h3>Gift Cards</h3>
+                <p>El regalo perfecto para tus seres queridos.</p>
+                <a href="#" class="btn-servicio">Más Información</a>
+            </div>
+        </div>
+
+        <!-- Programa VIP -->
+        <section class="programa-vip">
+            <div class="vip-info">
+                <h2>Programa VIP</h2>
+                <p>Únete a nuestro programa exclusivo y disfruta de beneficios especiales.</p>
+                <ul class="vip-beneficios">
+                    <li><i class="fas fa-check"></i> Acceso anticipado a nuevas colecciones</li>
+                    <li><i class="fas fa-check"></i> Descuentos exclusivos</li>
+                    <li><i class="fas fa-check"></i> Eventos privados</li>
+                    <li><i class="fas fa-check"></i> Asesoría personalizada</li>
+                </ul>
+                <a href="../pages/vip.html" class="btn-vip">Únete Ahora</a>
+            </div>
+            <div class="vip-imagen">
+                <img src="../assets/img/banners/vip-banner.jpg" alt="Programa VIP">
+            </div>
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <section class="contacto-servicios">
+            <h2>¿Necesitas más información?</h2>
+            <p>Contáctanos y te responderemos pronto.</p>
+        </section>
+    </main>
+
+{% endblock %}

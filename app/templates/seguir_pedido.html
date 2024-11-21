@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Seguimiento de Pedido
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/seguir_pedido.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="contenedor">
+        <h1>Seguimiento de Pedido</h1>
+        
+        <!-- Formulario de búsqueda -->
+        <div class="busqueda-pedido">
+            <h2>Ingresa tu código de seguimiento</h2>
+            <form id="form-seguimiento" class="form-seguimiento">
+                <input type="text" 
+                       id="codigo-seguimiento" 
+                       name="codigo-seguimiento" 
+                       placeholder="Ej: P-000001"
+                       required
+                       pattern="P-[0-9]{6}"
+                       title="Formato: P-XXXXXX (donde X son números)">
+                <button type="submit" class="btn-buscar">Buscar Pedido</button>
+            </form>
+        </div>
+
+        <!-- Detalles del pedido (inicialmente oculto) -->
+        <div class="pedido-info hidden" id="pedido-info">
+            <h2>Detalles del Pedido</h2>
+            <div class="detalle-item">
+                <span class="label">Número de Pedido:</span>
+                <span class="valor" data-tipo="numero" id="numero-pedido">-</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Fecha:</span>
+                <span class="valor" data-tipo="fecha" id="fecha-pedido">-</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Total:</span>
+                <span class="valor" data-tipo="total" id="total-pedido">-</span>
+            </div>
+
+            <!-- Estado del pedido con timeline -->
+            <div class="estado-timeline">
+                <h3>Estado del Pedido</h3>
+                <div class="timeline">
+                    <div class="estado-item" data-estado="pendiente">
+                        <div class="estado-icono">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="estado-texto">Pendiente</div>
+                    </div>
+                    <div class="estado-item" data-estado="procesando">
+                        <div class="estado-icono">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="estado-texto">Procesando</div>
+                    </div>
+                    <div class="estado-item" data-estado="enviado">
+                        <div class="estado-icono">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="estado-texto">Enviado</div>
+                    </div>
+                    <div class="estado-item" data-estado="entregado">
+                        <div class="estado-icono">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="estado-texto">Entregado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/seguimiento.js') }}"></script>
+{% endblock %} 

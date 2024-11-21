@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Centro de Ayuda{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ayuda.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- Centro de Ayuda -->
+    <div class="ayuda-container">
+        <div class="ayuda-header">
+            <h1>Centro de Ayuda</h1>
+            <div class="search-box">
+                <input type="text" placeholder="Buscar ayuda...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <div class="categorias-ayuda">
+            <div class="categoria-item">
+                <i class="fas fa-shopping-bag"></i>
+                <h3>Pedidos</h3>
+                <p>Seguimiento, modificaciones y cancelaciones</p>
+            </div>
+            <div class="categoria-item">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>Devoluciones</h3>
+                <p>Política y proceso de devolución</p>
+            </div>
+            <div class="categoria-item">
+                <i class="fas fa-tshirt"></i>
+                <h3>Productos</h3>
+                <p>Tallas, materiales y cuidados</p>
+            </div>
+            <div class="categoria-item">
+                <i class="fas fa-truck"></i>
+                <h3>Envíos</h3>
+                <p>Métodos y tiempos de entrega</p>
+            </div>
+        </div>
+
+        <div class="preguntas-frecuentes">
+            <h2>Preguntas Frecuentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cuál es el tiempo de entrega estándar?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestro tiempo de entrega estándar es de 3-5 días hábiles dentro de la ciudad y 5-7 días hábiles para envíos nacionales.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo devolver un producto?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Tienes 30 días para devolver un producto. Debe estar sin usar y con todas las etiquetas originales.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>¿Cómo puedo rastrear mi pedido?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Recibirás un correo con el número de seguimiento una vez que tu pedido haya sido enviado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacto-ayuda">
+            <h2>¿Necesitas más ayuda?</h2>
+            <div class="contacto-opciones">
+                <a href="#" class="contacto-item">
+                    <i class="fas fa-comments"></i>
+                    <h3>Chat en Vivo</h3>
+                    <p>Lun-Vie 9:00-18:00</p>
+                </a>
+                <a href="#" class="contacto-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>Respuesta en 24h</p>
+                </a>
+                <a href="#" class="contacto-item">
+                    <i class="fas fa-phone"></i>
+                    <h3>Teléfono</h3>
+                    <p>+52 123 456 7890</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Script para el acordeón de FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+                icon.classList.toggle('fa-chevron-up');
+                icon.classList.toggle('fa-chevron-down');
+            });
+        });
+    </script>
+    
+{% endblock %}
