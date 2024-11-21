@@ -1,38 +1,18 @@
-<!<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eleganza - Moda y Estilo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/principal.css">
-    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a class="alogo" href="./index.html">ELEGANZA</a>
-        </div>
-        <div class="nav-links">
-            <a href="./catalogo">Catálogo</a>
-            <a href="./sobre-nosotros.html">Nosotros</a>
-            <a href="./servicios.html">Servicios</a>
-            <a href="./vip.html">VIP</a>
-        </div>
-        <div class="nav-icons">
-            <a href="./cuenta.html"><i class="fas fa-user"></i></a>
-            <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
-        </div>
-    </nav>
+{% extends "base.html" %}
+
+{% block title %}
+    Moda y Estilo
+{% endblock %}
+
+
+{% block content %}
 
     <header class="hero">
         <h1>Elegancia en Cada Detalle</h1>
         <p>Descubre nuestra nueva colección</p>
         <div class="hero-buttons">
-            <a href="./carrito.html" class="btn primary">Comprar Ahora</a>
-            <a href="./catalogo.html" class="btn secondary">Ver Catálogo</a>
+            <a href="{{ url_for('carrito') }}" class="btn primary">Comprar Ahora</a>
+            <a href="{{ url_for('catalogo') }}" class="btn secondary">Ver Catálogo</a>
         </div>
     </header>
 
@@ -40,17 +20,17 @@
         <h2>Nuevos Catálogos</h2>
         <div class="catalogo-grid">
             <div class="catalogo-item">
-                <img src="assets/img/catalogo-1.jpg" alt="Catálogo Primavera">
+                <img src="{{ url_for('static', filename='imgs/catalogo-1.webp') }}" alt="Catálogo Primavera">
                 <h3>Primavera 2024</h3>
                 <p>Nueva Colección</p>
             </div>
             <div class="catalogo-item">
-                <img src="assets/img/catalogo-2.jpg" alt="Catálogo Verano">
+                <img src="{{ url_for('static', filename='imgs/catalogo-2.webp') }}" alt="Catálogo Verano">
                 <h3>Verano 2024</h3>
                 <p>Próximamente</p>
             </div>
             <div class="catalogo-item">
-                <img src="assets/img/catalogo-3.jpg" alt="Catálogo Especial">
+                <img src="{{ url_for('static', filename='imgs/catalogo-3.webp') }}" alt="Catálogo Especial">
                 <h3>Edición Especial</h3>
                 <p>Limitado</p>
             </div>
@@ -61,28 +41,28 @@
         <h2>Colección Destacada</h2>
         <div class="destacados-grid">
             <div class="destacado-item grande">
-                <img src="assets/img/destacado-1.jpg" alt="Destacado 1">
+                <img src="{{ url_for('static', filename='imgs/destacado-1.webp') }}" alt="Destacado 1">
                 <div class="destacado-info">
                     <h3>Elegancia Casual</h3>
                     <button class="btn primary">Ver Más</button>
                 </div>
             </div>
             <div class="destacado-item">
-                <img src="assets/img/destacado-2.jpg" alt="Destacado 2">
+                <img src="{{ url_for('static', filename='imgs/destacado-2.webp') }}" alt="Destacado 2">
                 <div class="destacado-info">
                     <h3>Accesorios</h3>
                     <button class="btn primary">Ver Más</button>
                 </div>
             </div>
             <div class="destacado-item">
-                <img src="assets/img/destacado-3.jpg" alt="Destacado 3">
+                <img src="{{ url_for('static', filename='imgs/destacado-3.webp') }}" alt="Destacado 3">
                 <div class="destacado-info">
                     <h3>Calzado</h3>
                     <button class="btn primary">Ver Más</button>
                 </div>
             </div>
             <div class="destacado-item">
-                <img src="assets/img/destacado-1.jpg" alt="Destacado 4">
+                <img src="{{ url_for('static', filename='imgs/destacado-4.webp') }}" alt="Destacado 4">
                 <div class="destacado-info">
                     <h3>Complementos</h3>
                     <button class="btn primary">Ver Más</button>
@@ -96,9 +76,9 @@
         <div class="testimonios-grid">
             <div class="testimonio">
                 <div class="testimonio-contenido">
-                    <p>"Excelente calidad y servicio. Totalmente recomendado."</p>
+                    <p>"La calidad de las prendas es excepcional. Me encanta el estilo único que ofrecen."</p>
                     <div class="cliente-info">
-                        <h4>Ana García</h4>
+                        <h4>María Rodríguez</h4>
                         <div class="estrellas">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -106,8 +86,40 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                    </div>
-                </div>
+                    </div>  
+                </div>   
+            </div>
+
+            <div class="testimonio">
+                <div class="testimonio-contenido">
+                    <p>"El servicio al cliente es impecable y la entrega fue más rápida de lo esperado."</p>
+                    <div class="cliente-info">
+                        <h4>Carlos Mendoza</h4>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>  
+                </div>   
+            </div>
+
+            <div class="testimonio">
+                <div class="testimonio-contenido">
+                    <p>"Las colecciones siempre están a la última moda. ¡No puedo esperar a ver lo nuevo!"</p>
+                    <div class="cliente-info">
+                        <h4>Laura Sánchez</h4>
+                        <div class="estrellas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>  
+                </div>   
             </div>
         </div>
     </section>
@@ -120,38 +132,5 @@
             <button type="submit" class="btn primary">Suscribirse</button>
         </form>
     </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Eleganza</h3>
-                <p>Elegancia en cada detalle</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="pages/catalogo.html">Catálogo</a></li>
-                    <li><a href="pages/sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="pages/ayuda.html">Centro de Ayuda</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <ul>
-                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
-                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
-</html>
+    
+{% endblock %}

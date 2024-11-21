@@ -1,34 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Eleganza</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/principal.css">
-    <link rel="stylesheet" href="../static/css/catalogo.css">
-    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="logo">
-            <a class="alogo" href="./index.html">ELEGANZA</a>
-        </div>
-        <div class="nav-links">
-            <a href="./catalogo.html">Catálogo</a>
-            <a href="./sobre-nosotros.html">Nosotros</a>
-            <a href="./servicios.html">Servicios</a>
-            <a href="./vip.html">VIP</a>
-        </div>
-        <div class="nav-icons">
-            <a href="./cuenta.html"><i class="fas fa-user"></i></a>
-            <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
-        </div>
-    </nav>
-    
-    
+{% extends "base.html" %}
+
+{% block title %}
+    Catálogo
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/catalogo.css') }}">
+{% endblock %}
+
+{% block content %}
     <main class="catalogo-container">
         <aside class="filtros">
             <h3>Filtros</h3>
@@ -37,8 +17,8 @@
                 <div class="rango-precio">
                     <input type="range" min="0" max="5000" value="2500">
                     <div class="rango-valores">
-                        <span>$0</span>
-                        <span>$5,000</span>
+                        <span>$0 COP</span>
+                        <span>$500.000 COP</span>
                     </div>
                 </div>
             </div>
@@ -81,50 +61,63 @@
         </aside>
 
         <section class="productos-grid">
-            <!-- Productos -->
+            {% for producto in productos %}
             <div class="producto-card">
-                <img src="../assets/img/products/product-1.jpg" alt="Producto">
-                <h3>Vestido Elegante</h3>
-                <p class="precio">$1,234.00 MXN</p>
-                <button class="btn-comprar">Comprar</button>
+                <img src="{{ producto.imagen or url_for('static', filename='imgs/producto-1.webp') }}" alt="{{ producto.nombre }}">
+                <h3>{{ producto.nombre }}</h3>
+                <p class="precio">${{ producto.precio }} COP</p>
+                {% if producto.descuento > 0 %}
+                <p class="descuento">{{ producto.descuento }}% OFF</p>
+                {% endif %}
+                <div class="producto-acciones">
+                    <form action="{{ url_for('agregar_carrito', id_producto=producto.id_producto) }}" method="POST" class="form-agregar-carrito">
+                        <input type="number" name="cantidad" id="cantidad-{{ producto.id_producto }}" value="1" min="1" max="{{ producto.stock }}" class="cantidad-input">
+                        <button type="submit" class="btn btn-primary">
+                            Agregar al Carrito
+                        </button>
+                    </form>
+                </div>
             </div>
-            <!-- Más productos... -->
+            {% else %}
+            <div class="no-productos">
+                <p>No hay productos disponibles en este momento.</p>
+            </div>
+            {% endfor %}
         </section>
     </main>
 
-    <!-- Footer (igual que en index.html) -->
+{% endblock %}
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Eleganza</h3>
-                <p>Elegancia en cada detalle</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <ul>
-                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
-                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-</body>
-</html>
+{% block scripts %}
+<script>
+document.querySelectorAll('.btn-agregar-carrito').forEach(button => {
+    button.addEventListener('click', async function() {
+        const productoId = this.dataset.productoId;
+        try {
+            const response = await fetch('/api/carrito', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id_usuario: 1, // Esto debería venir de la sesión del usuario
+                    id_producto: productoId,
+                    cantidad: 1
+                })
+            });
+            
+            const data = await response.json();
+            if (data.success) {
+                // Actualizar el contador del carrito
+                document.querySelector('.carrito-contador').textContent = data.total_items;
+                // Mostrar mensaje de éxito
+                alert('Producto agregado al carrito');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Error al agregar al carrito');
+        }
+    });
+});
+</script>
+{% endblock %}

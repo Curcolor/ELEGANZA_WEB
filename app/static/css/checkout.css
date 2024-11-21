@@ -37,7 +37,8 @@
 
 .checkout-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: minmax(auto, 800px);
+    justify-content: center;
     gap: 3rem;
 }
 
@@ -189,6 +190,9 @@
 .btn-regresar:hover {
     background: #e0e0e0;
 }
+
+
+
 
 /* Ajustes responsive adicionales */
 @media (max-width: 768px) {

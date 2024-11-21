@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Sobre Eleganza
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre-nosotros.css') }}">
+{% endblock %}
+
+{% block content %}
+    <!-- secciones  -->
+
+    <section class="sobre-eleganza">
+        <h1 class="titulo">Sobre Eleganza</h1>
+        
+        <div class="contenedor-secciones">
+            <!-- Nuestra Historia -->
+            <div class="seccion">
+                <h2>Nuestra Historia</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <button class="boton-secundario">Leer más</button>
+            </div>
+
+            <!-- Sostenibilidad -->
+            <div class="seccion">
+                <h2>Sostenibilidad</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <button class="boton-secundario">Leer más</button>
+            </div>
+
+            <!-- Carreras -->
+            <div class="seccion">
+                <h2>Carreras</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                <button class="boton-secundario">Leer más</button>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

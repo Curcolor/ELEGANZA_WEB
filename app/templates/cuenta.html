@@ -1,33 +1,14 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Cuenta - Eleganza</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../static/css/principal.css">
-    <link rel="stylesheet" href="../static/css/cuenta.css">
-    <link rel="shortcut icon" href="../static/img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="logo">
-            <a class="alogo" href="./index.html">ELEGANZA</a>
-        </div>
-        <div class="nav-links">
-            <a href="./catalogo.html">Catálogo</a>
-            <a href="./sobre-nosotros.html">Nosotros</a>
-            <a href="./servicios.html">Servicios</a>
-            <a href="./vip.html">VIP</a>
-        </div>
-        <div class="nav-icons">
-            <a href="./cuenta.html"><i class="fas fa-user"></i></a>
-            <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
-        </div>
-    </nav>
-    
+{% extends "base.html" %}
+
+{% block title %}
+    Mi Cuenta
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cuenta.css') }}">
+{% endblock %}
+
+{% block content %}
     <main class="cuenta-container">
         <div class="cuenta-grid">
             <!-- Menú lateral -->
@@ -275,40 +256,4 @@
         </div>
     </main>
     
-    <!-- Footer -->
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Eleganza</h3>
-                <p>Elegancia en cada detalle</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="catalogo.html">Catálogo</a></li>
-                    <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <ul>
-                    <li><i class="fas fa-phone"></i> +52 123 456 7890</li>
-                    <li><i class="fas fa-envelope"></i> info@eleganza.com</li>
-                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de México, México</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+{% endblock %}
