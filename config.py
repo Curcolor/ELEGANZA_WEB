@@ -13,5 +13,9 @@ class Config:
     DB_NAME = os.getenv('MYSQLDATABASE', 'eleganza_ecommerce')
     DB_PORT = os.getenv('MYSQLPORT', '3306')
     
-    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    # Añadir parámetros SSL y timeout
+    SQLALCHEMY_DATABASE_URI = (
+        f"mysql+pymysql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+        "?charset=utf8mb4&ssl_mode=REQUIRED&connect_timeout=60"
+    )
     SQLALCHEMY_TRACK_MODIFICATIONS = False
