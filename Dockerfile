@@ -7,18 +7,20 @@ RUN apt-get update && apt-get install -y \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
+# Copiar solo los archivos necesarios primero
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Copiar el resto de la aplicación
 COPY . .
 
 # Variables de entorno
+ENV PORT=8080
 ENV FLASK_APP=run.py
 ENV FLASK_ENV=production
-ENV PYTHONUNBUFFERED=1
 
-# El puerto se configurará desde Railway
+# Exponer puerto
 EXPOSE 8080
 
 # Comando para iniciar la aplicación
-CMD gunicorn --bind 0.0.0.0:$PORT run:app --workers 1 --timeout 60 --log-level debug 
+CMD ["gunicorn", "--bind", "0.0.0.0:8080", "run:app", "--log-level=debug"]
