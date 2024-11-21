@@ -1,6 +1,5 @@
 [build]
-builder = "nixpacks"
-buildCommand = "pip install -r requirements.txt"
+builder = "dockerfile"
 
 [deploy]
 startCommand = "gunicorn run:app"
