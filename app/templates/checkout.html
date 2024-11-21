@@ -158,56 +158,13 @@
         </div>
     </main>
 
+{% block js %}
     <script>
-        const pasos = ['direccion', 'envio', 'pago'];
-        let pasoActual = 'direccion';
-
-        function actualizarPasos() {
-            pasos.forEach(paso => {
-                const elemento = document.getElementById(`paso-${paso}`);
-                const formulario = document.getElementById(`form-${paso}`);
-                
-                if (paso === pasoActual) {
-                    elemento.classList.add('activo');
-                    formulario.classList.remove('hidden');
-                } else {
-                    elemento.classList.remove('activo');
-                    formulario.classList.add('hidden');
-                }
-            });
-        }
-
-        function mostrarDireccion() {
-            pasoActual = 'direccion';
-            actualizarPasos();
-        }
-
-        function mostrarEnvio() {
-            pasoActual = 'envio';
-            actualizarPasos();
-        }
-
-        function mostrarPago() {
-            pasoActual = 'pago';
-            actualizarPasos();
-        }
-
-        // Event Listeners para los formularios
-        document.getElementById('direccion-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            mostrarEnvio();
-        });
-
-        document.getElementById('envio-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            mostrarPago();
-        });
-
-        document.getElementById('pago-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Aquí iría la lógica de procesamiento del pago
-            alert('¡Compra finalizada con éxito!');
-            window.location.href = '/confirmacion.html';
-        });
+        const userId = 1;  // Asumiendo que usas Flask-Login
+        const total = 0;  // Este valor debe ser pasado desde el backend
     </script>
+
+    <script src="{{ url_for('static', filename='js/checkout.js') }}"></script>
+{% endblock %}
+
 {% endblock %}

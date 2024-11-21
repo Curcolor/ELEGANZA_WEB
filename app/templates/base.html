@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
     <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
     
-    {% block css %}{% endblock %}   
+    {% block css %}
+    {% endblock %}   
 </head>
 <body>
     <nav class="navbar">
@@ -21,6 +22,7 @@
             <a href="{{ url_for('catalogo') }}">Catálogo</a>
             <a href="{{ url_for('sobre_nosotros') }}">Nosotros</a>
             <a href="{{ url_for('servicios') }}">Servicios</a>
+            <a href="{{ url_for('seguir_pedido') }}">Seguir pedido</a>
             <a href="{{ url_for('vip') }}">VIP</a>
         </div>
         <div class="nav-icons">
@@ -35,7 +37,8 @@
         </div>
     </nav>
 
-    {% block content %}{% endblock %}
+    {% block content %}
+    {% endblock %}
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
@@ -69,8 +72,8 @@
             <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
         </div>
     </footer>
-    {% block js %}
     <script src="{{ url_for('static', filename='js/carrito.js') }}"></script>
+    {% block js %}
     {% endblock %}
 </body>
 </html>

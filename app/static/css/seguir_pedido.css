@@ -1,0 +1,282 @@
+.contenedor {
+    max-width: 800px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contenedor h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.busqueda-pedido {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+    margin: 2rem 0;
+}
+
+.busqueda-pedido h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.form-seguimiento {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-seguimiento input {
+    padding: 0.8rem 1rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.form-seguimiento input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.btn-buscar {
+    padding: 0.8rem 2rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-buscar:hover {
+    background: #b39476;
+    transform: translateY(-2px);
+}
+
+.pedido-info {
+    background: #f8f9fa;
+    padding: 2.5rem;
+    border-radius: 10px;
+    text-align: left;
+    border: 1px solid #e9ecef;
+    margin: 2rem 0;
+}
+
+.pedido-info h2 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+}
+
+.detalle-item {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.estado-timeline {
+    margin-top: 3rem;
+}
+
+.estado-timeline h3 {
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #e9ecef;
+    z-index: 1;
+}
+
+.estado-item {
+    position: relative;
+    z-index: 2;
+    background: white;
+    padding: 1rem;
+    text-align: center;
+    width: 120px;
+}
+
+.estado-icono {
+    width: 50px;
+    height: 50px;
+    background: #e9ecef;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: #495057;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.estado-item[data-estado="activo"] .estado-icono {
+    background: var(--primary-color);
+    color: white;
+}
+
+.estado-texto {
+    font-size: 0.9rem;
+    color: #495057;
+    font-weight: 500;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contenedor {
+        margin: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .timeline {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .timeline::before {
+        width: 2px;
+        height: 100%;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .estado-item {
+        width: 100%;
+    }
+
+    .detalle-item {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+}
+
+
+/* Estilos para estados del timeline */
+.estado-item.completado .estado-icono {
+    background: var(--primary-color);
+    color: white;
+}
+
+.estado-item.activo .estado-icono {
+    background: #2b8a3e;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(43, 138, 62, 0.3);
+}
+
+.estado-item.completado::after {
+    background: var(--primary-color);
+}
+
+/* Estilos para mensajes de error */
+.alerta-error {
+    background-color: #fff3cd;
+    color: #856404;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+    border: 1px solid #ffeeba;
+    animation: fadeIn 0.3s ease-in;
+}
+
+/* Animación para la alerta */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para el input cuando es inválido */
+#codigo-seguimiento:invalid {
+    border-color: #dc3545;
+}
+
+/* Estilo para el mensaje de validación */
+#codigo-seguimiento:invalid + .validation-message {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Estilos para mensajes */
+.mensaje-container {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.alerta {
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+}
+
+.alerta-error {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.alerta-exito {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+}

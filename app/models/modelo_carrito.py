@@ -1,24 +1,23 @@
 from app import db
-from datetime import datetime, UTC
-from sqlalchemy import Numeric  # Importamos Numeric
+from datetime import datetime
 
 class CarritoItem(db.Model):
     __tablename__ = 'carrito_items'
     
-    id_item = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id_usuario'), nullable=False)
-    id_producto = db.Column(db.Integer, db.ForeignKey('productos.id_producto'), nullable=False)
-    cantidad = db.Column(db.Integer, default=1, nullable=False)
-    precio_unitario = db.Column(Numeric(10,2), nullable=False)  # Cambiado a Numeric
-    total = db.Column(Numeric(10,2), nullable=False)  # Cambiado a Numeric
-    fecha_agregado = db.Column(db.DateTime, default=lambda: datetime.now(UTC), nullable=False)
+    id_carrito_item = db.Column(db.Integer, primary_key=True)
+    id_usuario = db.Column(db.Integer, db.ForeignKey('usuarios.id_usuario', ondelete='CASCADE'), nullable=False)
+    id_producto = db.Column(db.Integer, db.ForeignKey('productos.id_producto', ondelete='CASCADE'), nullable=False)
+    cantidad = db.Column(db.Integer, nullable=False, default=1)
+    fecha_creacion = db.Column(db.DateTime, default=datetime.utcnow)
 
-    def __init__(self, id_usuario, id_producto, cantidad=1, precio_unitario=0.00):
+    # Relaciones
+    usuario = db.relationship('Usuario', backref=db.backref('carrito_items', lazy=True))
+    producto = db.relationship('Producto', backref=db.backref('carrito_items', lazy=True))
+
+    def __init__(self, id_usuario, id_producto, cantidad=1):
         self.id_usuario = id_usuario
         self.id_producto = id_producto
         self.cantidad = cantidad
-        self.precio_unitario = precio_unitario
-        self.total = precio_unitario * cantidad
 
     def __repr__(self):
-        return f'<CarritoItem {self.id_item}>' 
+        return f'<CarritoItem {self.id_carrito_item}>' 

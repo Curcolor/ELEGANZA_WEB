@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Confirmación de Pedido
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/confirmacion.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <div class="contenedor">
+        <h1>¡Gracias por tu compra!</h1>
+        <div class="pedido-info">
+            <h2>Detalles del Pedido</h2>
+            <div class="detalle-item">
+                <span class="label">Número de Pedido:</span>
+                <span class="valor" data-tipo="numero">{{ pedido.id_pedido }}</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Código de seguimiento:</span>
+                <span class="valor" data-tipo="codigo">{{ pedido.codigo_seguimiento }}</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Fecha:</span>
+                <span class="valor" data-tipo="fecha">{{ pedido.fecha }}</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Total:</span>
+                <span class="valor" data-tipo="total">${{ pedido.total }}</span>
+            </div>
+            <div class="detalle-item">
+                <span class="label">Estado:</span>
+                <span class="valor" data-tipo="estado">{{ pedido.estado }}</span>
+            </div>
+        </div>
+        <a href="{{ url_for('catalogo') }}" class="volver-tienda">Volver a la Tienda</a>
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/confirmacion.js') }}"></script>
+{% endblock %}

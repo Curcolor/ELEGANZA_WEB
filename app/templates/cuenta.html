@@ -15,10 +15,9 @@
             <aside class="cuenta-menu">
                 <div class="perfil-info">
                     <div class="perfil-imagen">
-                        <img src="../assets/img/profile-default.jpg" alt="Foto de perfil">
+                        <img src="{{ url_for('static', filename='imgs/user_profile.webp') }}" alt="Foto de perfil">
                     </div>
-                    <h3>Ana García</h3>
-                    <p>Cliente VIP</p>
+                    <h3>{{ usuario.nombre }}</h3>
                 </div>
                 
                 <nav class="menu-navegacion">
@@ -58,26 +57,17 @@
                     <!-- Información Personal -->
                     <div class="perfil-seccion">
                         <h2>Información Personal</h2>
-                        <form class="form-perfil">
+                        <form class="form-perfil" id="form-perfil">
                             <div class="form-grid">
                                 <div class="form-grupo">
                                     <label>Nombre</label>
-                                    <input type="text" value="Ana" required>
-                                </div>
-                                <div class="form-grupo">
-                                    <label>Apellidos</label>
-                                    <input type="text" value="García" required>
+                                    <input type="text" name="nombre" value="{{ usuario.nombre }}" required>
                                 </div>
                             </div>
                             
                             <div class="form-grupo">
                                 <label>Correo Electrónico</label>
-                                <input type="email" value="ana.garcia@email.com" required>
-                            </div>
-                            
-                            <div class="form-grupo">
-                                <label>Teléfono</label>
-                                <input type="tel" value="+52 123 456 7890">
+                                <input type="email" name="email" value="{{ usuario.email }}" required readonly>
                             </div>
                             
                             <button type="submit" class="btn-guardar">Guardar Cambios</button>
@@ -256,4 +246,12 @@
         </div>
     </main>
     
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        // Pasar la URL para actualizar el perfil al JavaScript
+        const ACTUALIZAR_PERFIL_URL = "{{ url_for('actualizar_usuario', id=usuario.id_usuario) }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/cuenta.js') }}"></script>
 {% endblock %}
