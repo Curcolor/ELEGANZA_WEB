@@ -38,7 +38,7 @@ Un vistazo a la página web:
 
 ## 🚀 Estado del Proyecto
 
-**El proyecto se encuentra actualmente en fase de desarrollo**
+**El proyecto se encuentra actualmente en fase de desarrollo. aunque la pagina web se encuentra en producción.**
 
 ## 📦 Instalación
 
