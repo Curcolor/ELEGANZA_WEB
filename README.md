@@ -10,15 +10,21 @@ Visita la página web de ELEGANZA:
 - [ELEGANZA](https://curcolor.pythonanywhere.com/)
 
 Un vistazo a la página web:
+
 ![ELEGANZA](./documents/mockups/Eleganza-E-commerce-preview.png)
 
 ## 📁 Documentación
 
-- [Documentación de la API](./documents/ERS/ERS-ECOMMERCE-ELEGANZA.pdf)
+- [Documentación ERS](./documents/ERS/ERS-ECOMMERCE-ELEGANZA.pdf)
+- [Diagrama de Base de Datos](./documents/diagramasdb_and_db/Eleganza_E-commerceDB.png)
+- [Diagrama de Casos de uso](./documents/diagramas_drawio/diseño_ecomerce.pdf)
+- [mapa de navegación](./documents/diagramas_drawio/mapa_de_navegacion_eleganza.pdf)
 
 ## 🖼️ Mockup original de la pagina web ELEGANZA.
 
 ![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
+
+[link del prototipo de figma](https://www.figma.com/proto/H7l7WY1Obc1adrWQR9uktn/Eleganza-E-commerce?node-id=0-1&t=DYPcQZQxuc0k5FfZ-1)
 
 ### 🎯 Características Principales
 
