@@ -93,10 +93,6 @@ button[type="submit"]:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
     #formularioRegistro {
         padding: 1.5rem;
     }

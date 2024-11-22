@@ -1,4 +1,4 @@
-from datetime import datetime, UTC
+from datetime import datetime, timezone
 from app import db
 
 class Usuario(db.Model):
@@ -11,7 +11,7 @@ class Usuario(db.Model):
     password = db.Column(db.String(255), nullable=False)
     es_vip = db.Column(db.Boolean, default=False, nullable=True)
     estado = db.Column(db.Boolean, default=True, nullable=True)
-    fecha_registro = db.Column(db.DateTime, default=lambda: datetime.now(UTC), nullable=True)
+    fecha_registro = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc), nullable=True)
 
     def __init__(self, nombre, email, password, id_rol=2, es_vip=False, estado=True):
         self.nombre = nombre
@@ -20,7 +20,7 @@ class Usuario(db.Model):
         self.id_rol = id_rol
         self.es_vip = es_vip
         self.estado = estado
-        self.fecha_registro = datetime.now(UTC)
+        self.fecha_registro = datetime.now(timezone.utc)
 
     def __repr__(self):
         return f'<Usuario {self.email}>'

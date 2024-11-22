@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.ok) {
                 document.getElementById('mensaje').innerHTML = '¡Registro exitoso!';
                 document.getElementById('formularioRegistro').reset();
+                setTimeout(() => {
+                    window.location.href = '/login';
+                }, 1500);
             } else {
                 document.getElementById('mensaje').innerHTML = `Error: ${resultado.error}`;
             }
