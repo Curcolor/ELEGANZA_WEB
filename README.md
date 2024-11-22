@@ -10,7 +10,7 @@ Visita la página web de ELEGANZA:
 - [ELEGANZA](https://curcolor.pythonanywhere.com/)
 
 Un vistazo a la página web:
-![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
+![ELEGANZA](./documents/mockups/Eleganza-E-commerce-preview.png)
 
 ## 📁 Documentación
 
