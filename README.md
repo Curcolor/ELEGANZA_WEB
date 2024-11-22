@@ -4,7 +4,19 @@
 
 ELEGANZA es una plataforma e-commerce especializada en moda que busca satisfacer las necesidades de los clientes en cuanto a la compra de ropa y accesorios. El sistema está diseñado para ofrecer una experiencia de usuario fluida , conectando a compradores con las últimas tendencias de moda.
 
-## 🖼️ Mockup de la pagina web ELEGANZA.
+## 🌐 Página web
+
+Visita la página web de ELEGANZA:
+- [ELEGANZA](https://curcolor.pythonanywhere.com/)
+
+Un vistazo a la página web:
+![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
+
+## 📁 Documentación
+
+- [Documentación de la API](./documents/ERS/ERS-ECOMMERCE-ELEGANZA.pdf)
+
+## 🖼️ Mockup original de la pagina web ELEGANZA.
 
 ![ELEGANZA](./documents/mockups/Eleganza-E-commerce.png)
 
@@ -22,7 +34,7 @@ ELEGANZA es una plataforma e-commerce especializada en moda que busca satisfacer
 - Frontend: HTML, CSS, JavaScript
 - Backend: Python, Flask
 - Base de Datos: MySQL
-- Servicios Cloud: AWS _(Pending)_
+- Servicios Cloud: PythonAnywhere 
 
 ## 🚀 Estado del Proyecto
 
