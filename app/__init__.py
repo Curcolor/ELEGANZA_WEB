@@ -23,31 +23,6 @@ try:
     # Inicializar extensiones
     db = SQLAlchemy(app)
     ma = Marshmallow(app)
-    
-    # Ruta de healthcheck básica
-    @app.route('/health')
-    def health_check():
-        try:
-            # Verificar conexión a la base de datos
-            db.session.execute('SELECT 1')
-            return jsonify({'status': 'healthy', 'database': 'connected'}), 200
-        except Exception as e:
-            logger.error(f"Error en health check: {str(e)}")
-            return jsonify({'status': 'unhealthy', 'error': str(e)}), 500
-
-    @app.route('/')
-    def index():
-        return jsonify({'status': 'ok'}), 200
-
-    # Manejadores de errores
-    @app.errorhandler(500)
-    def handle_500(error):
-        logger.error(f"Error 500: {str(error)}")
-        return jsonify({'error': 'Internal Server Error'}), 500
-
-    @app.errorhandler(404)
-    def handle_404(error):
-        return jsonify({'error': 'Not Found'}), 404
 
     # Importar modelos y schemas después de crear db
     from app.models.modelo_usuario import Usuario
