@@ -11,10 +11,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: var(--font-family);
     color: var(--text-color);
+}
+main {
+    flex: 1;
 }
 
 
@@ -160,7 +165,7 @@ body {
     display: flex;
     align-items: center; /* Centrado vertical */
     gap: 6rem;
-    min-height: 100vh; /* Altura mínima de la pantalla */
+    min-height: 80vh; /* Altura mínima de la pantalla */
     position: relative;
 }
 

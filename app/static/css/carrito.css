@@ -2,6 +2,8 @@
     padding: 2rem 5%;
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
+    flex: 1;
 }
 
 .carrito-container h1 {
@@ -20,7 +22,7 @@
     padding: 1rem;
 }
 
-.carrito-item {
+.carrito-item{
     display: grid;
     grid-template-columns: auto 1fr auto auto auto;
     gap: 1rem;

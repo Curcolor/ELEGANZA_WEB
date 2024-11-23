@@ -10,47 +10,51 @@
 
 
 {% block content %}
-    
-    <main class="carrito-container">
-        <h1>Tu Carrito</h1>
-        
-        <div class="carrito-grid">
-            <div class="carrito-items">
-                <div class="carrito-item">
-                    <img src="{{ url_for('static', filename='imgs/producto-1.webp') }}" alt="Producto">
-                    <div class="item-info">
-                        <h3>Vestido Elegante</h3>
-                        <p>Talla: M | Color: Negro</p>
-                    </div>
-                    <div class="cantidad">
-                        <button>-</button>
-                        <span>1</span>
-                        <button>+</button>
-                    </div>
-                    <div class="precio">$300.000 COP</div>
-                    <button class="btn-eliminar"><i class="fas fa-trash"></i></button>
+    <main>
+        <div class="carrito-container">
+            <h1>Tu Carrito</h1>
+            
+            <div class="carrito-grid">
+                <div class="carrito-items">
+                    <div class="carrito-item">
+                        <img src="{{ url_for('static', filename='imgs/producto-1.webp') }}" alt="Producto">
+                        <div class="item-info">
+                            <h3>Vestido Elegante</h3>
+                            <p>Talla: M | Color: Negro</p>
+                        </div>
+                        <div class="cantidad">
+                            <button>-</button>
+                            <span>1</span>
+                            <button>+</button>
+                        </div>
+                        <div class="precio">$300.000 COP</div>
+                        <button class="btn-eliminar"><i class="fas fa-trash"></i></button>
+                    </div>            
+                    <!-- Más items del carrito... -->
                 </div>
                 
-                <!-- Más items del carrito... -->
-            </div>
-            
-            <div class="carrito-resumen">
-                <h2>Resumen del Pedido</h2>
-                <div class="resumen-linea">
-                    <span>Subtotal</span>
-                    <span>$300.000 COP</span>
+                <div class="carrito-resumen">
+                    <h2>Resumen del Pedido</h2>
+                    <div class="resumen-linea">
+                        <span>Subtotal</span>
+                        <span>$300.000 COP</span>
+                    </div>
+                    <div class="resumen-linea">
+                        <span>Envío</span>
+                        <span>$150.000 COP</span>
+                    </div>
+                    <div class="resumen-linea total">
+                        <span>Total</span>
+                        <span>$450.000 COP</span>
+                    </div>
+                    <a href="{{ url_for('checkout') }}" class="btn-checkout">Proceder al Pago</a>
                 </div>
-                <div class="resumen-linea">
-                    <span>Envío</span>
-                    <span>$150.000 COP</span>
-                </div>
-                <div class="resumen-linea total">
-                    <span>Total</span>
-                    <span>$450.000 COP</span>
-                </div>
-                <a href="{{ url_for('checkout') }}" class="btn-checkout">Proceder al Pago</a>
             </div>
         </div>
     </main>
-    
+{% endblock %}
+
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/carrito.js') }}"></script>
 {% endblock %}
