@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/catalogo.css') }}">
+    <link rel="stylesheet" href="/app\Vista\static\css\catalogo.css">
 {% endblock %}
 
 {% block content %}
@@ -63,7 +63,7 @@
         <section class="productos-grid">
             {% for producto in productos %}
             <div class="producto-card">
-                <img src="{{ producto.imagen or url_for('static', filename='imgs/producto-1.webp') }}" alt="{{ producto.nombre }}">
+                <img src="/app\Vista\static\imgs\producto-1.webp" alt="{{ producto.nombre }}">
                 <h3>{{ producto.nombre }}</h3>
                 <p class="precio">${{ producto.precio }} COP</p>
                 {% if producto.descuento > 0 %}
@@ -89,5 +89,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="{{ url_for('static', filename='js/catalogo.js') }}"></script>
+<script src="/app\Vista\static\js\catologo.js"></script>
 {% endblock %}

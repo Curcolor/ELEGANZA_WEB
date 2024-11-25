@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block css %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/carrito.css') }}">
+    <link rel="stylesheet" href="app\Vista\static\css\carrito.css">
 {% endblock %}
 
 
@@ -17,7 +17,7 @@
             <div class="carrito-grid">
                 <div class="carrito-items">
                     <div class="carrito-item">
-                        <img src="{{ url_for('static', filename='imgs/producto-1.webp') }}" alt="Producto">
+                        <img src="/app\Vista\static\imgs\producto-1.webp" alt="Producto">
                         <div class="item-info">
                             <h3>Vestido Elegante</h3>
                             <p>Talla: M | Color: Negro</p>
@@ -47,7 +47,7 @@
                         <span>Total</span>
                         <span>$450.000 COP</span>
                     </div>
-                    <a href="{{ url_for('checkout') }}" class="btn-checkout">Proceder al Pago</a>
+                    <a href="checkout.html" class="btn-checkout">Proceder al Pago</a>
                 </div>
             </div>
         </div>
@@ -56,5 +56,5 @@
 
 
 {% block js %}
-    <script src="{{ url_for('static', filename='js/carrito.js') }}"></script>
+    <script src="/app/Vista/static/js/carrito.js"></script>
 {% endblock %}

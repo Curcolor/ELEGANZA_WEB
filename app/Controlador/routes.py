@@ -61,10 +61,7 @@ def cuenta():
         usuario = Usuario.query.get(session['usuario_id'])
         if not usuario:
             return redirect(url_for('login'))
-            
-        return render_template('cuenta.html', 
-                             title='Mi Cuenta',
-                             usuario=usuario)
+        return render_template('cuenta.html', title='Mi Cuenta', usuario=usuario)
     except Exception as e:
         print(f"Error al cargar datos de usuario: {str(e)}")
         return redirect(url_for('login'))

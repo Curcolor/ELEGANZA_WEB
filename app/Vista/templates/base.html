@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/principal.css') }}">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='imgs/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="/app\Vista\static\css\principal.css">
+    <link rel="shortcut icon" href="/app\Vista\static\imgs\favicon.ico" type="image/x-icon">
     
     {% block css %}
     {% endblock %}   
@@ -16,24 +16,24 @@
 <body>
     <nav class="navbar">
         <div class="logo">
-            <a class="alogo" href="{{ url_for('index') }}">ELEGANZA</a>
+            <a class="alogo" href="index.html">ELEGANZA</a>
         </div>
         <div class="nav-links">
-            <a href="{{ url_for('catalogo') }}">Catálogo</a>
-            <a href="{{ url_for('sobre_nosotros') }}">Nosotros</a>
-            <a href="{{ url_for('servicios') }}">Servicios</a>
-            <a href="{{ url_for('seguir_pedido') }}">Seguir pedido</a>
-            <a href="{{ url_for('vip') }}">VIP</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="sobre_nosotros.html">Nosotros</a>
+            <a href="servicios.html">Servicios</a>
+            <a href="seguir_pedido.html">Seguir pedido</a>
+            <a href="vip.html">VIP</a>
         </div>
         <div class="nav-icons">
-            <a href="{{ url_for('registro') }}"><i class="fas fa-search"></i></a>
-            <a href="{{ url_for('carrito') }}" class="carrito-icono">
+            <a href="registro.html"><i class="fas fa-search"></i></a>
+            <a href="carrito.html" class="carrito-icono">
                 <i class="fas fa-shopping-cart"></i>
                 <div class="carrito-contador">
                     <span>0</span>
                 </div>
             </a>
-            <a href="{{ url_for('login') }}"><i class="fas fa-user"></i></a>
+            <a href="login.html"><i class="fas fa-user"></i></a>
         </div>
     </nav>
 
@@ -54,9 +54,9 @@
             <div class="footer-section">
                 <h3>Enlaces Rápidos</h3>
                 <ul>
-                    <li><a href="{{ url_for('catalogo') }}">Catálogo</a></li>
-                    <li><a href="{{ url_for('sobre_nosotros') }}">Sobre Nosotros</a></li>
-                    <li><a href="{{ url_for('ayuda') }}">Centro de Ayuda</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
+                    <li><a href="ayuda.html">Centro de Ayuda</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -72,7 +72,7 @@
             <p>&copy; 2024 Eleganza. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="{{ url_for('static', filename='js/carrito.js') }}"></script>
+    <script src="/app/Vista/static/js/carrito.js"></script>
     {% block js %}
     {% endblock %}
 </body>

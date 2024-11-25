@@ -6,6 +6,7 @@ from config import Config
 import os
 import logging
 
+
 # Configurar logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
@@ -25,13 +26,14 @@ try:
     ma = Marshmallow(app)
 
     # Importar modelos y schemas después de crear db
-    from app.models.modelo_usuario import Usuario
-    from app.schemas.schemas_usuario import usuario_schema, usuarios_schema
-    from app.models.modelo_carrito import CarritoItem
-    from app.schemas.schemas_carrito import carrito_item_schema, carrito_items_schema
+    from Modelo.models import *
+    #from app.models.modelo_usuario import Usuario
+    #from app.schemas.schemas_usuario import usuario_schema, usuarios_schema
+    #from app.models.modelo_carrito import CarritoItem
+    #from app.schemas.schemas_carrito import carrito_item_schema, carrito_items_schema
 
     # Importar rutas después de definir db
-    from app.routes import *
+    from app.Controlador.routes import *
 
     logger.info("Aplicación inicializada correctamente")
 
