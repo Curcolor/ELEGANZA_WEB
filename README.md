@@ -16,10 +16,12 @@ Un vistazo a la página web:
 ## 📁 Documentación
 
 - [Documentación ERS](./documents/ERS/ERS-ECOMMERCE-ELEGANZA.pdf)
-- [Patrón de Arquitectura Modelo vista controlador](./documents/diagramas_drawio/Diagrama_de_patron_de_arquitectura.pdf)
+- [Estilo de arquitectura](./documents/diagramas_drawio/estilo_de_arquitectura-ESTILO%20DE%20ARQUITECTUA%20CLIENTE%20-%20SERVIDOR%20DE%20ELEGANZA.pdf)
+- [Patrón de Arquitectura Modelo vista controlador](./documents/diagramas_drawio/estilo_de_arquitectura-PATRÓN%20DE%20ARQUITECTUA%20MVC%20DE%20FLASK%20-%20ELEGANZA.pdf)
 - [Diagrama de Base de Datos](./documents/diagramasdb_and_db/Eleganza_E-commerceDB.png)
 - [Diagrama de Casos de uso](./documents/diagramas_drawio/diseño_ecomerce.pdf)
-- [mapa de navegación](./documents/diagramas_drawio/mapa_de_navegacion_eleganza.pdf)
+- [Diagrama de clases](./documents/diagramas_drawio/diagramaClases.drawio%20(1).pdf)
+- [Mapa de navegación](./documents/diagramas_drawio/mapa_de_navegacion_eleganza.pdf)
 
 ## 🖼️ Mockup original de la pagina web ELEGANZA.
 
