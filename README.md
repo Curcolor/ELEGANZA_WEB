@@ -16,6 +16,7 @@ Un vistazo a la página web:
 ## 📁 Documentación
 
 - [Documentación ERS](./documents/ERS/ERS-ECOMMERCE-ELEGANZA.pdf)
+- [Patrón de Arquitectura Modelo vista controlador](./documents/diagramas_drawio/Diagrama_de_patron_de_arquitectura.pdf)
 - [Diagrama de Base de Datos](./documents/diagramasdb_and_db/Eleganza_E-commerceDB.png)
 - [Diagrama de Casos de uso](./documents/diagramas_drawio/diseño_ecomerce.pdf)
 - [mapa de navegación](./documents/diagramas_drawio/mapa_de_navegacion_eleganza.pdf)
